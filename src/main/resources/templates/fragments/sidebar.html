@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<aside class="sidebar" th:fragment="sidebar ()">
+
+    <!-- Logo area -->
+    <div class="logo">
+        <a th:href="@{/}"><img th:src="@{/images/JustDoIt.png}" alt="JustDoIt Logo" width="200" height="200"></a>
+    </div>
+
+    <!-- Navigation area -->
+    <nav class="navigation">
+        <h3>Tareas</h3>
+        <ul>
+            <li>
+                <a th:href="@{/user/tasks}">Tareas de usuario actual</a>
+            </li>
+            <li>
+                <a th:href="@{/user/tasks/report}">Reporte de tareas</a>
+            </li>
+        </ul>
+    </nav>
+
+</aside>

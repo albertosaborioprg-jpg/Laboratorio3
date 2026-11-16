@@ -143,3 +143,16 @@
  }
 
 .validationError {font-size: 0.9rem; color: red; margin-top: 4px;}
+
+th, td {
+    padding: 10px 25px;
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+}

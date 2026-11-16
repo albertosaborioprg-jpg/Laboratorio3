@@ -1,10 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>JustDoIt! - Reporte de tareas del usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
-$END$
+<div class="container">
+
+    <!-- Left column -->
+    <div th:replace="fragments/sidebar"></div>
+
+    <!-- Right column -->
+    <main class="content">
+        <h1>Reporte de tareas del usuario</h1>
+
+        <!-- User info -->
+        <div th:replace="fragments/user-info"></div>
+
+        <!-- Tasks grouped by report -->
+        <table>
+
+            <thead>
+            <tr>
+                <th>Tarea</th>
+                <th>Estado</th>
+                <th>Fecha limite</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:if="${#lists.isEmpty(user.tasks)}">
+                <td colspan="3">No hay tareas registradas</td>
+            </tr>
+
+            <tr th:each="task : ${user.tasks}">
+                <td th:text="${task.description}"></td>
+                <td th:text="${task.status}"></td>
+                <td th:text="${task.deadline != null ? task.deadline : 'No especificada'}"></td>
+            </tr>
+            </tbody>
+
+
+        </table>
+
+    </main>
+</div>
+
 </body>
 </html>

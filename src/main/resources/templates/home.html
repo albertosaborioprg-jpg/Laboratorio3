@@ -14,24 +14,7 @@
 <div class="container">
 
     <!-- Left column -->
-    <aside class="sidebar">
-
-        <!-- Logo area -->
-        <div class="logo">
-            <a th:href="@{/}"><img th:src="@{/images/JustDoIt.png}" alt="JustDoIt Logo" width="200" height="200"></a>
-        </div>
-
-        <!-- Navigation area -->
-        <nav class="navigation">
-            <h3>Tareas</h3>
-            <ul>
-                <li>
-                    <a th:href="@{/user/tasks}">Tareas de usuario actual</a>
-                </li>
-            </ul>
-        </nav>
-
-    </aside>
+    <div th:replace="fragments/sidebar"></div>
 
     <!-- Right column -->
     <main class="content">
